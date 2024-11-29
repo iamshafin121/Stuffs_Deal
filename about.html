@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stuffs Deal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Sidebar animation */
+        #sidebar {
+            transition: transform 0.3s ease;
+        }
+        #sidebar.hidden {
+            transform: translateX(-100%);
+        }
+        #overlay {
+            transition: opacity 0.3s ease;
+        }
+        #overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-[#F5F3C1] text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-[#27E1C1] shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Sidebar Toggle Button -->
+            <button id="menuButton" class="text-2xl text-[#2F0F5D]">
+                &#x2022;&#x2022;&#x2022;
+            </button>
+            <a href="#" class="text-2xl font-bold text-[#2F0F5D]">Stuffs Deal</a>
+            <nav class="space-x-6">
+                <a href="index.html" class="text-[#2F0F5D] hover:text-[#0EA293]">Home</a>
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293]">Shop</a>
+                <a href="about.html" class="text-[#2F0F5D] hover:text-[#0EA293]">About</a>
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293]">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-[#2F0F5D] text-white shadow-lg hidden z-50">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-4">Menu</h2>
+            <ul class="space-y-4">
+                <li><a href="#" class="block hover:text-[#27E1C1]">Sign in</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Trending</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Digital Content and Devices</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Shop by Category</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Programs & Features</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Help & Settings</a></li>
+                <li><a href="about.html" class="block hover:text-[#27E1C1]">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- Hero Section -->
+    <section class="bg-[#0EA293] text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold">About Stuffs Deal</h1>
+            <p class="mt-4 text-lg">Your go-to destination for affordable and dependable tech products.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <p class="text-[#2F0F5D] text-lg leading-relaxed">
+                    "Stuffs Deal" is an innovative e-commerce platform dedicated to providing high-quality gadgets and IT products at affordable prices. Designed to cater to tech enthusiasts and everyday consumers, the website offers a wide range of electronics, including smartphones, laptops, smartwatches, accessories, and other essential tech gadgets. The primary goal of Stuffs Deal is to bridge the gap between the latest tech products and customers who are looking for competitive prices without compromising on quality.
+                </p>
+                <p class="mt-6 text-[#2F0F5D] text-lg leading-relaxed">
+                    With a user-friendly interface, customers can easily browse through a vast collection of items, compare prices, and read detailed product descriptions to make informed purchasing decisions. The website also features a robust search function, allowing users to find their desired products quickly and efficiently. Additionally, it offers various payment options, including credit/debit cards, mobile wallets, and cash on delivery, ensuring a convenient shopping experience.
+                </p>
+                <p class="mt-6 text-[#2F0F5D] text-lg leading-relaxed">
+                    Stuffs Deal is committed to customer satisfaction, offering reliable shipping services and a hassle-free return policy. The website frequently updates its inventory with new gadgets, ensuring that customers have access to the latest and most innovative tech products on the market. Special discounts, promotional deals, and bundle offers make it an attractive choice for budget-conscious shoppers looking for great deals on the gadgets they love.
+                </p>
+                <p class="mt-6 text-[#2F0F5D] text-lg leading-relaxed">
+                    Whether you're upgrading your smartphone, purchasing a new laptop, or looking for tech accessories, <strong>Stuffs Deal</strong> is the go-to destination for affordable and dependable tech products.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2F0F5D] text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Stuffs Deal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuffs Deal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Sidebar animation */
+        #sidebar {
+            transition: transform 0.3s ease;
+        }
+        #sidebar.hidden {
+            transform: translateX(-100%);
+        }
+        #overlay {
+            transition: opacity 0.3s ease;
+        }
+        #overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-[#F5F3C1] text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-[#27E1C1] shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Sidebar Toggle Button -->
+            <button id="menuButton" class="text-2xl text-[#2F0F5D]">
+                &#x2022;&#x2022;&#x2022;
+            </button>
+            <a href="#" class="text-2xl font-bold text-[#2F0F5D]">Stuffs Deal</a>
+            <nav class="space-x-6">
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293]">Home</a>
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293]">Shop</a>
+                <a href="about.html" class="text-[#2F0F5D] hover:text-[#0EA293]">About</a>
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293]">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293]">
+                    <span class="material-icons">favorite</span>
+                    Wishlist
+                </a>
+                <a href="#" class="text-[#2F0F5D] hover:text-[#0EA293] flex items-center space-x-2">
+                    <span class="material-icons">shopping_cart</span>
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-[#2F0F5D] text-white shadow-lg hidden z-50">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-4">Menu</h2>
+            <ul class="space-y-4">
+                <li><a href="#" class="block hover:text-[#27E1C1]">Sign in</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Trending</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Digital Content and Devices</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Shop by Category</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Programs & Features</a></li>
+                <li><a href="#" class="block hover:text-[#27E1C1]">Help & Settings</a></li>
+                <li><a href="about.html" class="block hover:text-[#27E1C1]">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- Address Bar -->
+    <section class="bg-[#0EA293] text-white py-3">
+        <div class="container mx-auto px-6 text-center">
+            <p>Free shipping on orders over $50! Shop now and save!</p>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="bg-[#0EA293] text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold">Welcome to Stuffs Deal</h1>
+            <p class="mt-4 text-lg">The best place for amazing deals on quality products.</p>
+            <a href="#products" class="mt-6 inline-block bg-white text-[#0EA293] py-2 px-4 rounded-lg shadow hover:bg-gray-100">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Category Bar with Price Filter -->
+    <section class="py-6 bg-[#F5F3C1]">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex space-x-4">
+                <button class="bg-[#2F0F5D] text-white py-2 px-4 rounded-lg hover:bg-[#0EA293]">All Categories</button>
+                <button class="bg-[#2F0F5D] text-white py-2 px-4 rounded-lg hover:bg-[#0EA293]">Electronics</button>
+                <button class="bg-[#2F0F5D] text-white py-2 px-4 rounded-lg hover:bg-[#0EA293]">Fashion</button>
+                <button class="bg-[#2F0F5D] text-white py-2 px-4 rounded-lg hover:bg-[#0EA293]">Home</button>
+            </div>
+            <div class="flex space-x-4">
+                <label for="priceFilter" class="text-[#2F0F5D]">Price Filter:</label>
+                <select id="priceFilter" class="bg-white text-[#2F0F5D] py-2 px-4 rounded-lg">
+                    <option value="all">All Prices</option>
+                    <option value="low">Under $50</option>
+                    <option value="mid">$50 - $100</option>
+                    <option value="high">Above $100</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold text-center mb-6 text-[#2F0F5D]">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Product Card -->
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <img src="https://via.placeholder.com/150" alt="Product 1" class="w-full rounded-lg">
+                    <h3 class="mt-4 font-bold text-lg text-[#2F0F5D]">Product 1</h3>
+                    <p class="mt-2 text-[#0EA293]">$49.99</p>
+                    <button class="mt-4 bg-[#0EA293] text-white py-2 px-4 rounded-lg w-full hover:bg-[#27E1C1]">Add to Cart</button>
+                </div>
+                <!-- Duplicate Product Cards -->
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <img src="https://via.placeholder.com/150" alt="Product 2" class="w-full rounded-lg">
+                    <h3 class="mt-4 font-bold text-lg text-[#2F0F5D]">Product 2</h3>
+                    <p class="mt-2 text-[#0EA293]">$29.99</p>
+                    <button class="mt-4 bg-[#0EA293] text-white py-2 px-4 rounded-lg w-full hover:bg-[#27E1C1]">Add to Cart</button>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2F0F5D] text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Stuffs Deal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
